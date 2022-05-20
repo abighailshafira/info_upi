@@ -12,16 +12,70 @@ class Fakultas extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(border: Border.all()),
             padding: EdgeInsets.all(14),
-            child: Text("baris 1"),
+            child: Row(children: <Widget>[
+              Expanded(
+                flex: 3,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        "FPMIPA",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Fakultas Pendidikan Matematika dan Ilmu Pengetahuan Alam",
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Image.network(
+                  "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg", //pastikan file ada di assets/images
+                  height: 50,
+                ),
+              )
+            ]),
           ),
           onTap: () {
             //gunakan navigator untuk panggil RincianFakultas
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return RincianFakultas();
+            }));
           },
         ),
         Container(
-            decoration: BoxDecoration(border: Border.all()),
-            padding: EdgeInsets.all(14),
-            child: Text("baris kedua")),
+          decoration: BoxDecoration(border: Border.all()),
+          padding: EdgeInsets.all(14),
+          child: Row(children: <Widget>[
+            Expanded(
+              flex: 3,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  children: <Widget>[
+                    Text("FPIPS",
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    Text(
+                      "Fakultas Pendidikan Ilmu Pengetahuan Sosial",
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: Image.network(
+                "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg", //pastikan file ada di assets/images
+                height: 50,
+              ),
+            )
+          ]),
+        ),
       ]),
     );
   }
