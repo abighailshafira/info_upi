@@ -25,19 +25,21 @@ class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
-      appBar: AppBar(title: const Text("Info UPI")),
-      body: case2(idx),
-      bottomNavigationBar: BottomNavigationBar(
-          currentIndex: idx,
-          selectedItemColor: Colors.red,
-          onTap: onItemTap,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Fakultas'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.school), label: "Fasilitas"),
-          ]),
-    ));
+          appBar: AppBar(title: const Text("Info UPI")),
+          body: case2(idx),
+          bottomNavigationBar: BottomNavigationBar(
+              currentIndex: idx,
+              selectedItemColor: Colors.red,
+              onTap: onItemTap,
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.home), label: 'Fakultas'),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.school), label: "Fasilitas"),
+              ]),
+        ));
   }
 
   case2(int idx) {
